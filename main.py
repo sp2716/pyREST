@@ -28,8 +28,8 @@ def user():
 
 @app.route('/form', methods=['GET', 'POST', 'DELETE'])
 def form():
-	if(request.method == 'GET':
-		return ''
+	if request.method == 'GET':
+		return 'form goes here...'
 
 # driver function
 if __name__ == '__main__':
