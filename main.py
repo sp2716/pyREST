@@ -1,7 +1,8 @@
 # Using flask to make an api
 # import necessary libraries and functions
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, send_file
 from random import randrange
+import io
 
 # creating a Flask app
 app = Flask(__name__)
@@ -25,6 +26,12 @@ def user():
                        message="Success",
                        statusCode=200,
                        data=data), 200
+
+@app.route('/favicon.ico', methods=['GET'])
+def favicon():
+    if request.method == 'GET':
+        filename = 'favicon.ico'
+        return send_file(filename, mimetype='image/jpg')
 
 @app.route('/form', methods=['GET', 'POST', 'DELETE'])
 def form():
