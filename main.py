@@ -1,6 +1,5 @@
 from flask import Flask, jsonify, request, send_file
-from random import randrange
-import io
+
 
 app = Flask(__name__)
 
@@ -30,6 +29,5 @@ def form():
         return 'form goes here...'
 
 
-# driver function
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
