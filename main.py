@@ -15,6 +15,11 @@ def user():
                        statusCode=200,
                        data=data), 200
 
+@app.route('/config', methods=['GET'])
+def get_config():
+    if request.method == 'GET':
+        return jsonify(isError=False,message="Success",statusCode=200,data=data), 200
+
 
 @app.route('/favicon.ico', methods=['GET'])
 def favicon():
