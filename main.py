@@ -18,8 +18,7 @@ def user():
 @app.route('/config', methods=['GET'])
 def get_config():
     if request.method == 'GET':
-        cfg = config('127.0.0.2',503)
-        return cfg.getJson()
+        return Configuration.getJson()
 
 
 @app.route('/favicon.ico', methods=['GET'])
