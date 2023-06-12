@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request, send_file
-
+from config import Configuration
 
 app = Flask(__name__)
 
@@ -18,7 +18,8 @@ def user():
 @app.route('/config', methods=['GET'])
 def get_config():
     if request.method == 'GET':
-        return jsonify(isError=False,message="Success",statusCode=200,data=data), 200
+        cfg = config('127.0.0.2',503)
+        return cfg.getJson()
 
 
 @app.route('/favicon.ico', methods=['GET'])
