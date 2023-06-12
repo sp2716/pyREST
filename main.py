@@ -5,9 +5,9 @@ app = Flask(__name__)
 
 
 @app.route('/', methods=['GET', 'POST', 'DELETE'])
-def user():
+def index():
     if request.method == 'GET':
-        return 'engineer'
+        return '<html><a href=https://github.com/sp2716/pyrest.git></html>'
     if request.method == 'POST':
         data = request.form  # a multidict containing POST data
         return jsonify(isError=False,
